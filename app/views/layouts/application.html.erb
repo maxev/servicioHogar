@@ -12,11 +12,13 @@
     <p class="alert"><%= alert %></p>
 
     <% if user_signed_in? %>
-		<%= link_to 'Cerrar Sesion', destroy_user_session_path, method: :delete %>
+		<%= link_to 'Editar Perfil', edit_user_registration_path %>
+        <br>
+        <%= link_to 'Cerrar Sesion', destroy_user_session_path, method: :delete %>
 	<% else %>
 		<%= link_to 'Iniciar Sesion', new_user_session_path %>
-    <br>
-    <%= link_to 'Crear cuenta', new_user_registration_path %>
+        <br>
+        <%= link_to 'Crear cuenta', new_user_registration_path %>
 	<% end %>
 
 <%= yield %>
