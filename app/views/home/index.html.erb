@@ -1,2 +1,10 @@
 <h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+<h3>Listado de Usuarios</h3>
+
+<% @users.each do |user| %>
+	<ul>
+		<li><%= image_tag user.avatar.url(:thumb) %></li>
+		<li> <%= user.email %> <%= link_to 'ver Perfil', user %></li>
+	</ul>
+<% end %>
