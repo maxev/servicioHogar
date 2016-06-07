@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   
-  resources :categories
+
   devise_for :users
+  
+  resources :categories
+  resources :ratings
+  resources :users, only: :show
   
   root 'home#index'
 
