@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :categories
-  resources :ratings
-  resources :users, only: :show
-  
+  resources :users, only: :show do
+    resources :ratings, only: [:new, :create, :update]
+  end
+
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
