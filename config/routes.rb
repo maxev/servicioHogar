@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
-
+  
+  devise_for :clients, controllers: { omniauth_callbacks: 'omniauth_callbacks'}
   devise_for :users
   
   resources :categories

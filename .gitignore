@@ -15,4 +15,5 @@
 /log/*
 !/log/.keep
 /tmp
-Explicacion de routes
+/Explicacion de routes
+/.env
