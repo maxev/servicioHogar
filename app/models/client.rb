@@ -5,14 +5,13 @@ class Client < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
+    has_many :ratings
 
 private
 	def self.from_omniauth(auth)
 		where(provider: auth.provider, uid: auth.uid).first_or_create do |client|
 		    client.email = auth.info.email
 		    client.password = Devise.friendly_token[0,20]
-		    client.name = auth.info.name   # assuming the client model has a name
-		    client.image = auth.info.image # assuming the client model has an image
 		end
 	end
 	def self.new_with_session(params, session)

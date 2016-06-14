@@ -19,9 +19,10 @@ private
 	def selected_user
 		@selected_user ||= User.find(params[:user_id])
 	end
-	# helper_method :selected_user -> si quiero usar este metodo en las vistas
+	#helper_method :selected_user # si quiero usar este metodo en las vistas
+
 
 	def rating_params
-		params.require(:rating).permit(:score, :comment)
+		params.require(:rating).permit(:score, :comment, :client_id)
 	end
 end

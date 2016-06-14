@@ -11,15 +11,25 @@
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
 		<%= link_to 'Editar Perfil', edit_user_registration_path %>
-        <br>
-        <%= link_to 'Cerrar Sesion', destroy_user_session_path, method: :delete %>
+    <br>
+    <%= link_to 'Cerrar Sesion', destroy_user_session_path, method: :delete %>
 	<% else %>
 		<%= link_to 'Iniciar Sesion', new_user_session_path %>
-        <br>
-        <%= link_to 'Crear cuenta', new_user_registration_path %>
+    <br>
+    <%= link_to 'Crear cuenta', new_user_registration_path %>
 	<% end %>
+
+<br><br>
+
+  <% if client_signed_in? %>
+    <p>Hola <%= current_client.email %> </p>
+    <%= link_to 'Cerrar Sesion', destroy_client_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Client Sign in with Facebook", client_omniauth_authorize_path(:facebook) %>
+  <% end %>
+
 
 <%= yield %>
 
