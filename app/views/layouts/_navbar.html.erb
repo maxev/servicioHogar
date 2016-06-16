@@ -1,0 +1,29 @@
+  <nav>
+    <div class="nav-wrapper">
+
+        <ul class="left hide-on-med-and-down">
+            <li> <%= link_to 'Home', root_path %> </li>
+            <li> <%= link_to '¿Quienes Somos?', quienes_path %> </li>
+            <li> <%= link_to 'Contacto', contact_path %> </li>
+        </ul>
+
+        <ul class="right hide-on-med-and-down">
+            <% if user_signed_in? || client_signed_in? %>
+            
+            <% if user_signed_in? %>
+                <li><%= link_to 'Editar Perfil', edit_user_registration_path %></li>
+                <li><%= link_to 'Cerrar Sesion', destroy_user_session_path, method: :delete %></li>
+            <% end %>
+
+            <% if client_signed_in? %>
+                <li> Hola <%= current_client.email %></li>
+                <li><%= link_to 'Cerrar Sesion', destroy_client_session_path, method: :delete %></li>
+            <% end %>
+        
+        <% else %>
+            <li><%= link_to 'Iniciar Sesion', sign_in_both_path %></li>
+        <% end %>
+        
+        </ul>
+    </div>
+  </nav>

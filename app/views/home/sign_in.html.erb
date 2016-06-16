@@ -1,0 +1,11 @@
+<div class="row">
+<h2>Incio sesion</h2>
+    <div class="col s6">
+    	<h3>Trabajador</h3>
+    	<%= link_to 'Iniciar Sesion', new_user_session_path %>
+    </div>
+    <div class="col s6">
+    	<h3>Cliente</h3>
+    	<%= link_to 'Iniciar Sesion con Facebook', client_facebook_omniauth_authorize_path %>
+    </div>
+</div>

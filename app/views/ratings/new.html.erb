@@ -1,4 +1,5 @@
-<h1>Ratings#New</h1>
+<h1>Puntuar
+</h1>
 
 <% if client_signed_in? %>
   <%= form_for([@selected_user,@rating]) do |f| %>
@@ -26,11 +27,9 @@
       <%= f.hidden_field :client_id, value: current_client.id %>
     </div>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit 'Puntuar', class:"btn waves-effect" %>
     </div>
   <% end %>
-
-  <%= current_client.id %>
 <% else %>
   <%= link_to 'Iniciar sesion con facebook', client_omniauth_authorize_path(:facebook) %>
 <% end %>

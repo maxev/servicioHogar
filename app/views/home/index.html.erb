@@ -1,10 +1,50 @@
-<h1>Home#index</h1>
+<div class="section no-pad-bot" id="index-banner">
 
-<h3>Listado de Usuarios</h3>
+	    <h1 class="header center">Bienvenidos</h1>
+	    <div class="row center">
+	        <h5 class="header col s12 light"> Aca podes buscar a quien quiera hacer tu trabajo y comparar precios </h5>
+      	</div>
+		<div class="row">
+			<div class="col s12">
+				<div class="nav-wrapper">
+			      	<form>
+			        	<div class="input-field">
+			          		<input id="search" type="search" required>
+				        	<label for="search"><i class="material-icons">search</i> Prestador de servicios, Categorias, Proyectos, etc...</label>
+				        	<i class="material-icons">close</i>
+				        </div>
+			      	</form>
+		    	</div>		
+			</div>
+		</div>
+</div>
 
-<% @users.each do |user| %>
-	<ul>
-		<li><%= image_tag user.avatar.url(:thumb) %></li>
-		<li> <%= user.email %> <%= link_to 'ver Perfil', user %></li>
-	</ul>
-<% end %>
+<div class="divider"></div>
+
+<div class="row">
+	<div class="col s4">
+		<div class="card-panel blue-grey lighten-5 center">
+			<i class="large material-icons">perm_identity</i>
+			<br>
+			<p><%= link_to 'REGISTRATE', new_user_registration_path %> para que la gente conozca en que trabajas</p>
+		</div>
+	</div>
+	<div class="col s4">
+		<div class="card-panel blue-grey lighten-5 center">
+			<i class="large material-icons">thumbs_up_down</i>
+			<br>
+			<p>Recibí puntuaciones de tus clientes para que otros puedan ver</p>
+		</div>
+	</div>
+	
+	<div class="col s4">
+		<div class="card-panel blue-grey lighten-5 center">
+			<i class="large material-icons">search</i>
+			<br>
+			<p><%= link_to 'Inicio sesion con facebook', client_facebook_omniauth_authorize_path %>
+			 y busca quien pueda hacer tu trabajo</p>
+		</div>
+	</div>
+</div>
+
+

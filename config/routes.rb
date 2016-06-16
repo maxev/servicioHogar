@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     resources :ratings, only: [:new, :create, :update]
   end
 
+  get 'sign_in', to: 'home#sign_in', as: 'sign_in_both'
+  get 'quienes_somos', to:'home#quienes_somos', as: 'quienes'
+  get 'contact', to: 'home#contact'
+
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
