@@ -4,17 +4,20 @@
 	    <div class="row center">
 	        <h5 class="header col s12 light"> Aca podes buscar a quien quiera hacer tu trabajo y comparar precios </h5>
       	</div>
+
 		<div class="row">
 			<div class="col s12">
-				<div class="nav-wrapper">
-			      	<form>
+			      	<%= form_tag "search/create", method: :get do %>
 			        	<div class="input-field">
-			          		<input id="search" type="search" required>
-				        	<label for="search"><i class="material-icons">search</i> Prestador de servicios, Categorias, Proyectos, etc...</label>
-				        	<i class="material-icons">close</i>
+			        		<%= text_field_tag :palabra, nil, placeholder: " Prestador de servicios, Categorias, Proyectos, etc...", class: "col s10" %>
+			          		<!-- <input id="search" type="search" required> -->
+				        	<!-- <label for="search"><i class="material-icons">search</i> Prestador de servicios, Categorias, Proyectos, etc...</label>
+				        	<i class="material-icons">close</i> -->
+				        	<%= content_tag :button, type: :submit, class:"btn waves-effect col s2" do %>
+				        		Buscar
+				        	<% end %>
 				        </div>
-			      	</form>
-		    	</div>		
+			      	<% end %>
 			</div>
 		</div>
 </div>
@@ -46,5 +49,3 @@
 		</div>
 	</div>
 </div>
-
-

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
   
+  get 'search/create'
+  post 'search/create'
+
   devise_for :clients, controllers: { omniauth_callbacks: 'omniauth_callbacks'}
   devise_for :users
   

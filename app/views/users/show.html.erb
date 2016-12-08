@@ -7,6 +7,9 @@
 	<div class="col s6">
 		<ul>
 			<li><%= @user.email %></li>
+			<li><%= @user.name %>, <%= @user.last_name %></li>
+			<li><%= @user.address %></li>
+			<li><%= @user.biography %></li>
 			<li><%= link_to 'Puntuar/Opinar', new_user_rating_path(@user) %></li>
 			<li>Puntuacion: <%= @average %> </li>	
 		</ul>
@@ -22,7 +25,10 @@
 			<%= rating.score %>
 		</div>
 		<div class="col s10 blue">
-			<%= rating.inspect %>
+		<% if rating.client_id %>
+			<% client = Client.find(rating.client_id) %>
+			<%= client.email %>
+		<% end %>
 		</div>	
 	</div>
 <% end %>

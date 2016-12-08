@@ -1,0 +1,22 @@
+<h1>Resultados</h1>
+
+
+<h2>Usuarios</h2>
+<% if @resultsUser %>
+	<% @resultsUser.each do |ru| %>
+		<p><%= link_to ru.email, user_path(ru) %></p>	
+	<% end %>
+<% else %>	
+	<h5>No se encontro ningún resultado</h5>
+<% end %>
+
+<div class="divider"></div>
+
+<h2>Categorias</h2>
+<% if @resultsCategory %>
+	<% @resultsCategory.each do |rc| %>
+		<p><%= link_to rc.name, category_path(rc) %></p>	
+	<% end %>
+<% else %>
+	<h5>No se encontro ningún resultado</h5>
+<% end %>
